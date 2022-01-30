@@ -221,7 +221,7 @@ impl EwwPaths {
             ipc_socket_file: std::env::var("XDG_RUNTIME_DIR")
                 .map(std::path::PathBuf::from)
                 .unwrap_or_else(|_| std::path::PathBuf::from("/tmp"))
-                .join(format!("eww-server_{}", daemon_id)),
+		.join("eww-server_test"),
         })
     }
 
