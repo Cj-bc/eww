@@ -121,6 +121,9 @@ impl App {
                     for (var_name, new_value) in mappings {
                         self.update_global_state(var_name, new_value);
                     }
+                    for (_, _window) in self.open_windows.clone() {
+                        _window.gtk_window.resize(1,1);
+                    }
                 }
                 DaemonCommand::ReloadConfigAndCss(sender) => {
                     let mut errors = Vec::new();
